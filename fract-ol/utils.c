@@ -1,0 +1,56 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/25 00:44:11 by moel-hai          #+#    #+#             */
+/*   Updated: 2025/03/25 01:54:49 by moel-hai         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "fractol.h"
+
+int	ft_isdigit(int c)
+{
+	return ('0' <= c && c <= '9');
+}
+
+int ft_strcmp(char *s1, char *s2)
+{
+    int i;
+
+    i = 0;
+	while (s1[i] && s2[i] && s1[i] == s2[i])
+        i++;
+    return (s1[i] - s2[i]);
+}
+double	ft_atodouble(char *str)
+{
+	int		i;
+	int		s;
+	double	power;
+	double	r;
+
+	i = 0;
+	r = 0;
+	power = 1;
+	s = 1;
+	if ((str[i] == '-' || str[i] == '+' ))
+	{
+		if (str[i++] == '-')
+			s = -1;
+	}
+	while (ft_isdigit(str[i]))
+		r = r * 10 + (str[i++] - '0');
+	if (str[i] == '.')
+		i++;
+	while (ft_isdigit(str[i]))
+	{
+		power = power / 10;
+		r = r + (str[i] - '0') * power;
+		i++;
+	}
+	return (r * s);
+}

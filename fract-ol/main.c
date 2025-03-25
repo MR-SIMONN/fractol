@@ -6,13 +6,16 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 17:18:19 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/23 17:19:28 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/25 01:38:25 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "fractol.h"
+#include "fractol.h"
 
 int main (int ac, char **av)
 {
-    
+    // t_fractal   fract;
+
+    parsing(ac, av);
+    return 0;
 }
