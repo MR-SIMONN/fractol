@@ -53,5 +53,5 @@ void    parsing(int ac, char **av)
         && valid_nbr(av[2]) && valid_nbr(av[3]))))
         get_some_help();
     else
-        write (1, "you'r good ;)\n", 14);
+        write (1, "valid input ;)\n", 14);
 }

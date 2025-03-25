@@ -29,18 +29,19 @@ int ft_strcmp(char *s1, char *s2)
 double	ft_atodouble(char *str)
 {
 	int		i;
+	double	r;
 	int		s;
 	double	power;
-	double	r;
 
 	i = 0;
 	r = 0;
-	power = 1;
 	s = 1;
-	if ((str[i] == '-' || str[i] == '+' ))
+	power = 1;
+	if ((str[i] == '+' || str[i] == '-' ))
 	{
-		if (str[i++] == '-')
-			s = -1;
+		if (str[i] == '-')
+			s *= -1;
+		i++;
 	}
 	while (ft_isdigit(str[i]))
 		r = r * 10 + (str[i++] - '0');
@@ -49,8 +50,7 @@ double	ft_atodouble(char *str)
 	while (ft_isdigit(str[i]))
 	{
 		power = power / 10;
-		r = r + (str[i] - '0') * power;
-		i++;
+		r = r + (str[i++] - '0') * power;
 	}
 	return (r * s);
 }
