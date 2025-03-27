@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 00:44:11 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/25 01:54:49 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/27 12:36:18 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int ft_strcmp(char *s1, char *s2)
         i++;
     return (s1[i] - s2[i]);
 }
-double	ft_atodouble(char *str)
+double	ft_atouble(char *str)
 {
 	int		i;
 	double	r;

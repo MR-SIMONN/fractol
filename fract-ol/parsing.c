@@ -6,11 +6,17 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 22:48:04 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/25 02:56:01 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/27 11:16:10 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
+
+void    get_some_help(void)
+{
+    write (1, "stop it, get some help :)\n", 26);
+    exit (0);
+}
 
 int valid_nbr(char  *str)
 {
@@ -34,24 +40,24 @@ int valid_nbr(char  *str)
             return (0);
         i++;
     }
-    nbr = ft_atodouble(str);
+    nbr = ft_atouble(str);
     if (nbr < -2 || nbr > 2)
         return (0);
     return (1);
 }
 
-void    get_some_help(void)
-{
-    write (1, "stop it, get some help :)\n", 26);
-    exit (0);
-}
-
-void    parsing(int ac, char **av)
+void    parsing(int ac, char **av, t_fractal *fract)
 {
     if (ac == 1 || !((!strcmp(av[1], "mandelbrot") && ac == 2)
         || (!strcmp(av[1], "julia") && ac == 4 
         && valid_nbr(av[2]) && valid_nbr(av[3]))))
         get_some_help();
-    else
-        write (1, "valid input ;)\n", 14);
+    if (strcmp(av[1], "mandelbrot"))
+        fract->name = "mandelbrot";
+    else if (strcmp(av[1], "julia"))
+    {
+        fract->name = "julia";
+		fract->c.r = ft_atouble(av[2]);
+		fract->c.i = -ft_atouble(av[3]);
+    }
 }
