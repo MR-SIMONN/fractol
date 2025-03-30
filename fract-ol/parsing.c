@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 22:48:04 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/27 11:16:10 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/30 14:18:50 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int valid_nbr(char  *str)
             return (0);
         i++;
     }
-    nbr = ft_atouble(str);
+    nbr = ft_atod(str);
     if (nbr < -2 || nbr > 2)
         return (0);
     return (1);
@@ -57,7 +57,7 @@ void    parsing(int ac, char **av, t_fractal *fract)
     else if (strcmp(av[1], "julia"))
     {
         fract->name = "julia";
-		fract->c.r = ft_atouble(av[2]);
-		fract->c.i = -ft_atouble(av[3]);
+		fract->c.r = ft_atod(av[2]);
+		fract->c.i = -ft_atod(av[3]);
     }
 }

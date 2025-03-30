@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 17:18:19 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/27 13:31:06 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/30 14:01:47 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ void    fail_check(t_fractal *n, char c)
 void    get_fractal(t_fractal *p)
 {
 	p->init = mlx_init();
-	fail_check(p, '1');
+	fail_check(p, 0);
 	p->win = mlx_new_window(p->init, WIDTH, HEIGHT, p->name);
-	fail_check(p, '1');
+	fail_check(p, 0);
 	p->img = mlx_new_image(p->init, WIDTH, HEIGHT);
 	fail_check(p, 'i');
 	p->addr = mlx_get_data_addr(p->img, &p->bpp, &p->line_size, &p->endian);

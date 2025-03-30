@@ -6,33 +6,46 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 13:16:27 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/27 13:31:06 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/30 15:24:05 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "fractol.h"
 
+int	color_grade(int i)
+{
+	if (i == MAX_ITERATION)
+		return (0);
+	return (i * 0x00060E);
+}
+
+int	iterations_needed(int x, int y, t_fractal *p)
+{
+	if (!ft_strcmp(p->name, "julia"))
+		return (julia_iterations(x, y, p));
+	if (!ft_strcmp(p->name, "mandelbrot"))
+		return (mandelbrot_iterations(x, y, p));
+}
+
 void	put_fract(t_fractal *p)
 {
-	int		pixel;
-	char	*dest;
+	int		location;
+	char	*pixel;
+	int		color;
 	int		x;
 	int		y;
 
-	pixel = 0;
 	y = 0;
 	while (y < HEIGHT)
 	{
 		x = 0;
 		while (x < WIDTH)
 		{
-			if (ft_strcmp(p->name, "julia") == 0)
-				p->iterations = julia_iterations(x, y, p);
-			if (ft_strcmp(p->name, "mandelbrot") == 0)
-				p->iterations = mandelbrot_iterations(x, y, p);
-			pixel = (y * p->line_size) + (x * (p->bpp / 8));
-			dest = p->addr + pixel;
-			*(unsigned int *)dest = color_ft(p->iterations);
+			p->iterations = iterations_needed(x, y, p);
+			color = color_grade(p->iterations);
+			location = (y * p->line_size) + (x * (p->bpp / 8));
+			pixel = p->addr + location;
+			*(unsigned int *)pixel = color;
 			x++;
 		}
 		y++;
