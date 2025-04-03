@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 00:44:11 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/30 14:18:50 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/04/03 19:01:59 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	ft_isdigit(int c)
 
 int ft_strcmp(char *s1, char *s2)
 {
+	// printf("-----------s1 = %s --------s2 = %s \n", s1, s2);
     int i;
 
     i = 0;
@@ -32,7 +33,6 @@ double	ft_atod(char *str)
 	double	r;
 	int		s;
 	double	power;
-
 	i = 0;
 	r = 0;
 	s = 1;

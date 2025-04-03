@@ -1,4 +1,4 @@
-SRC = ft_atod.c ft_events.c parsing.c utils.c fractol.c
+SRC = calculations.c drawing_it.c parsing.c utils.c main.c
 
 NAME = fractol
 
@@ -20,10 +20,10 @@ $(NAME): $(OBJ)
 	cc $(CFLAGS) -c $<
 
 clean:
-	$(RM) $(OBJ)
+	@$(RM) $(OBJ)
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 re: fclean all
 

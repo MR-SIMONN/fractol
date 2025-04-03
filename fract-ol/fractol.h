@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 22:48:31 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/30 15:23:56 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/04/03 18:30:14 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
-
+#include <stdio.h>
 # define WIDTH 800
 # define HEIGHT 800
 # define MAX_ITERATION 200
@@ -46,10 +46,12 @@ typedef struct s_fractal
 	t_complex		z;
 }	t_fractal;
 
-void    parsing(int ac, char **av, t_fractal *fract);
-void	put_fract(t_fractal *p);
-int		ft_strcmp(char *s1, char *s2);
-double	ft_atod(char *str);
-int		ft_isdigit(int c);
+void    	parsing(int ac, char **av, t_fractal *fract);
+void		put_fract(t_fractal *p);
+t_complex	sum(t_complex z1, t_complex z2);
+t_complex	square(t_complex z);
+int			ft_strcmp(char *s1, char *s2);
+double		ft_atod(char *str);
+int			ft_isdigit(int c);
 
 # endif

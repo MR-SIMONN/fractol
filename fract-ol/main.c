@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 17:18:19 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/30 14:01:47 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/04/03 19:01:46 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ void    get_fractal(t_fractal *p)
 	p->addr = mlx_get_data_addr(p->img, &p->bpp, &p->line_size, &p->endian);
 	fail_check(p, 'a');
 	p->zoom = 1;
+	p->z.r = 0;
+	p->z.i = 0;
 	put_fract(p);
 	mlx_put_image_to_window(p->init, p->win, p->img, 0, 0);
 }
@@ -45,10 +47,9 @@ void    get_fractal(t_fractal *p)
 int main (int ac, char **av)
 {
     t_fractal   fract;
-
+	
     parsing(ac, av, &fract);
     get_fractal(&fract);
-	//mlx_hooks
-	mlx_loop(fract.init);	
+	mlx_loop(fract.init);
     return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 22:48:04 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/30 14:18:50 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/04/03 19:04:43 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,13 @@ int valid_nbr(char  *str)
 
 void    parsing(int ac, char **av, t_fractal *fract)
 {
-    if (ac == 1 || !((!strcmp(av[1], "mandelbrot") && ac == 2)
-        || (!strcmp(av[1], "julia") && ac == 4 
+    if (ac == 1 || !((!ft_strcmp(av[1], "mandelbrot") && ac == 2)
+        || (!ft_strcmp(av[1], "julia") && ac == 4 
         && valid_nbr(av[2]) && valid_nbr(av[3]))))
         get_some_help();
-    if (strcmp(av[1], "mandelbrot"))
+    if (!ft_strcmp(av[1], "mandelbrot"))
         fract->name = "mandelbrot";
-    else if (strcmp(av[1], "julia"))
+    else if (!ft_strcmp(av[1], "julia") && ac == 4)
     {
         fract->name = "julia";
 		fract->c.r = ft_atod(av[2]);
