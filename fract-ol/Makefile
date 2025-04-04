@@ -1,4 +1,4 @@
-SRC = calculations.c drawing_it.c parsing.c utils.c main.c
+SRC = calculations.c drawing_it.c parsing.c utils.c main.c hooks.c
 
 NAME = fractol
 

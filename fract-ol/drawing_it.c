@@ -17,14 +17,14 @@ double	in_range(t_complex z)
 	return ((z.r * z.r) + (z.i * z.i));
 }
 
-double	scale(double value, double min, double max, double dimension)
+double	scale(double value, double max, double min, double dimension)
 {
 	return ((value / dimension) * (max - min) + min);
 }
 
 int	color_grade(int i)
 {
-	if (i == MAX_ITERATION)
+	if (i == MAX_ITERATIONS)
 		return (0);
 	return (i * 0x00060E);
 }
@@ -34,14 +34,14 @@ int	iterations_needed(int x, int y, t_fractal p)
 	int			iterations;
 	t_complex	point;
 
-	point.r = scale(x, -2, 2, WIDTH) * p.zoom;
-	point.i = scale(y, -2, 2, HEIGHT) * p.zoom;
+	point.r = scale(x, 2, -2, WIDTH) * p.zoom;
+	point.i = scale(y, 2, -2, HEIGHT) * p.zoom;
 	if (!ft_strcmp(p.name, "mandelbrot"))
 		p.c = point;
 	else if (!ft_strcmp(p.name, "julia"))
 		p.z = point;
 	iterations = 0;
-	while (iterations < MAX_ITERATION)
+	while (iterations < MAX_ITERATIONS)
 	{
 		p.z = sum(square(p.z), p.c);
 		if (in_range(p.z) > 4)
@@ -74,4 +74,5 @@ void	put_fract(t_fractal *p)
 		}
 		y++;
 	}
+	mlx_put_image_to_window(p->init, p->win, p->img, 0, 0);
 }

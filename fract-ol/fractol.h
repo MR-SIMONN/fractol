@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 22:48:31 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/04/03 18:30:14 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/04/04 14:31:26 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,14 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
-#include <stdio.h>
+
+# define MAX_ITERATIONS 200
 # define WIDTH 800
 # define HEIGHT 800
-# define MAX_ITERATION 200
-
+# define SCROLL_UP 4
+# define SCROLL_DOWN 5
+# define ESC 53
+# define CROSS_BUTTON 17
 
 typedef	struct s_complex
 {
@@ -53,5 +56,8 @@ t_complex	square(t_complex z);
 int			ft_strcmp(char *s1, char *s2);
 double		ft_atod(char *str);
 int			ft_isdigit(int c);
+int	cross_window(t_fractal *p);
+int	key_hook(int keycode, t_fractal *p);
+int	mouse_hook(int button, int x, int y, t_fractal *p);
 
 # endif
