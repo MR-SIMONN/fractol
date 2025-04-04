@@ -6,20 +6,20 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 13:16:27 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/04/03 17:44:37 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/04/04 20:07:21 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "fractol.h"
+#include "fractol.h"
 
 double	in_range(t_complex z)
 {
 	return ((z.r * z.r) + (z.i * z.i));
 }
 
-double	scale(double value, double max, double min, double dimension)
+double	scale(double coordinate, double max, double min, double size)
 {
-	return ((value / dimension) * (max - min) + min);
+	return ((coordinate / size) * (max - min) + min);
 }
 
 int	color_grade(int i)
@@ -36,10 +36,10 @@ int	iterations_needed(int x, int y, t_fractal p)
 
 	point.r = scale(x, 2, -2, WIDTH) * p.zoom;
 	point.i = scale(y, 2, -2, HEIGHT) * p.zoom;
-	if (!ft_strcmp(p.name, "mandelbrot"))
-		p.c = point;
-	else if (!ft_strcmp(p.name, "julia"))
+	if (!ft_strcmp(p.name, "julia"))
 		p.z = point;
+	else if (!ft_strcmp(p.name, "mandelbrot"))
+		p.c = point;
 	iterations = 0;
 	while (iterations < MAX_ITERATIONS)
 	{
