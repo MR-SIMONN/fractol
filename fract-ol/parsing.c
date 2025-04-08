@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 22:48:04 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/04/08 17:58:14 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/04/08 20:08:45 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,6 @@ void	parsing(int ac, char **av, t_fractal *fract)
 	{
 		fract->name = "julia";
 		fract->c.r = ft_atod(av[2]);
-		fract->c.i = ft_atod(av[3]);
+		fract->c.i = -ft_atod(av[3]);
 	}
 }

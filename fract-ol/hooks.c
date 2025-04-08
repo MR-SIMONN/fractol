@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 14:24:44 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/04/07 20:50:38 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/04/08 18:39:22 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,5 @@ int	cross_window(t_fractal *p)
 {
 	mlx_destroy_image(p->init, p->img);
 	mlx_destroy_window(p->init, p->win);
-	exit(EXIT_SUCCESS);
+	exit(0);
 }
