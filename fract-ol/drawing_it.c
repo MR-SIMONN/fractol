@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 13:16:27 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/04/04 20:07:21 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/04/07 20:59:13 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 double	in_range(t_complex z)
 {
-	return ((z.r * z.r) + (z.i * z.i));
+	return (sqrt((z.r * z.r) + (z.i * z.i)));
 }
 
 double	scale(double coordinate, double max, double min, double size)
@@ -44,7 +44,7 @@ int	iterations_needed(int x, int y, t_fractal p)
 	while (iterations < MAX_ITERATIONS)
 	{
 		p.z = sum(square(p.z), p.c);
-		if (in_range(p.z) > 4)
+		if (in_range(p.z) > 2)
 			return (iterations);
 		iterations++;
 	}

@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 00:44:11 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/04/04 20:10:10 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/04/08 17:26:29 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ double	ft_atod(char *str)
 	while (ft_isdigit(str[i]))
 	{
 		power = power / 10;
-		r = r + (str[i++] - '0') * power;
+		r += (str[i++] - '0') * power;
 	}
 	return (r * s);
 }

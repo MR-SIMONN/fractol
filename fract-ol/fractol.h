@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 22:48:31 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/04/04 20:06:51 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/04/08 18:11:01 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <mlx.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include <string.h>
 
 # define MAX_ITERATIONS 100
 # define WIDTH 800

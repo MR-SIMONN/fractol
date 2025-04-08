@@ -4,7 +4,7 @@ NAME = fractol
 
 CFLAGS = -Wall -Wextra -Werror
 
-MLXFLAGS = -framework OpenGL -framework AppKit -lmlx -lm
+MLXFLAGS = -framework OpenGL -framework AppKit -lmlx
 
 OBJ = $(SRC:.c=.o)
 
